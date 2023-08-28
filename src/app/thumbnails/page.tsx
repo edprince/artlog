@@ -1,5 +1,4 @@
 import Thumbnail from "@/components/Thumbnail"
-import { attributes, react, ThumbnailContent } from "../../../thumbnails/yosemite.md"
 
 export default function Thumbnails() {
     return (
