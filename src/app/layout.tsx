@@ -1,3 +1,4 @@
+import Nav from '@/components/Nav'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -19,7 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
-      <body className={inter.className}>{children}
+      <body className={inter.className}>
+        <Nav />
+        <main className="flex min-h-screen flex-col items-center justify-between p-8 md:px-24">
+          {children}
+        </main>
+        <footer className="text-gray-500 text-xs p-16 m-auto w-full text-center">© 2023 Ed Prince</footer>
       </body>
     </html>
   )
