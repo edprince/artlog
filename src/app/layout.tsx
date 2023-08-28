@@ -16,7 +16,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+      </head>
+      <body className={inter.className}>{children}
+        <script>
+          if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+              if (!user) {
+                window.netlifyIdentity.on("login", () => {
+                  document.location.href = "/admin/";
+                });
+              }
+            });
+  }
+        </script>
+      </body>
     </html>
   )
 }
